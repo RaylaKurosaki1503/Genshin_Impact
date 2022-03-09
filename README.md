@@ -28,7 +28,7 @@
 
 <!-- Domain Drop Analysis -->
 ## Domain Drop Analysis
-This project computes the frequency of each type of drop for the Talent and Weapon material drops
+This project computes the frequency of each type of drop for the Talent and Weapon material drops. The only constraint in this project is that this program does not consider condensed runs.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
