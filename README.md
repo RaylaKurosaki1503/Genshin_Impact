@@ -19,9 +19,18 @@
 <details>
 	<summary>Table of Contents</summary>
 	<ol>
+		<li><a href="#domain-drop-analysis">Domain Drop Analysis</a></li>
 		<li><a href="#license">License</a></li>
 	</ol>
 </details>
+
+
+
+<!-- Domain Drop Analysis -->
+## Domain Drop Analysis
+This project computes the frequency of each type of drop for the Talent and Weapon material drops
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
