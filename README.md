@@ -27,7 +27,7 @@
 
 
 <!-- Domain Drop Analysis -->
-## Talent and Weapon Level-Up Material Drops
+## [Talent and Weapon Level-Up Material Drops](https://github.com/RaylaKurosaki1503/Genshin_Impact/tree/master/Talent%20and%20Weapon%20Level-Up%20Material%20Drops)
 <div align="center">
 <img src="__images__/talent_a.png" width="100" height="100">
 <img src="__images__/talent_b.png" width="100" height="100">
