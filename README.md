@@ -27,8 +27,8 @@
 
 
 <!-- Domain Drop Analysis -->
+## Domain Drop Analysis
 <div align="center">
-<h1>Domain Drop Analysis</h1>
 <img src="__images__/talent_a.png" width="100" height="100">
 <img src="__images__/talent_b.png" width="100" height="100">
 <img src="__images__/talent_c.png" width="100" height="100">
