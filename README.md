@@ -29,12 +29,12 @@
 <!-- Domain Drop Analysis -->
 ## [Talent and Weapon Level-Up Material Drops](https://github.com/RaylaKurosaki1503/Genshin_Impact/tree/master/Talent%20and%20Weapon%20Level-Up%20Material%20Drops)
 <div align="center">
-<img src="__images__/talent_a.png" width="100" height="100">
-<img src="__images__/talent_b.png" width="100" height="100">
-<img src="__images__/talent_c.png" width="100" height="100">
-<img src="__images__/weapon_a.png" width="100" height="100">
-<img src="__images__/weapon_b.png" width="100" height="100">
-<img src="__images__/weapon_c.png" width="100" height="100">
+<img src="__images__/Inazuma/Talent_A.png" width="100" height="100">
+<img src="__images__/Inazuma/Talent_B.png" width="100" height="100">
+<img src="__images__/Inazuma/Talent_C.png" width="100" height="100">
+<img src="__images__/Inazuma/Weapon_A.png" width="100" height="100">
+<img src="__images__/Inazuma/Weapon_B.png" width="100" height="100">
+<img src="__images__/Inazuma/Weapon_C.png" width="100" height="100">
 </div>
 This project computes the frequency of each type of drop for the Talent and Weapon material drops. There are a few constraints to this project that should be mentioned. The first constraint is that all the data came from me completing domain runs. I have not taken data from any other source other than my own. The second constraint is that this project does NOT consider condensed resin.  
 
