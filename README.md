@@ -19,7 +19,7 @@
 <details>
 	<summary>Table of Contents</summary>
 	<ol>
-		<li><a href="#domain-drop-analysis">Domain Drop Analysis</a></li>
+		<li><a href="#talent-and-weapon-Level-up-material-drops">Talent and Weapon Level-Up Material Drops</a></li>
 		<li><a href="#license">License</a></li>
 	</ol>
 </details>
@@ -27,7 +27,7 @@
 
 
 <!-- Domain Drop Analysis -->
-## Domain Drop Analysis
+## Talent and Weapon Level-Up Material Drops
 <div align="center">
 <img src="__images__/talent_a.png" width="100" height="100">
 <img src="__images__/talent_b.png" width="100" height="100">
