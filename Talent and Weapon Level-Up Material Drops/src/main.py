@@ -150,7 +150,7 @@ def print_analysis(datas):
     # Initialize the first row of the tables.
     table_header = [["Drop", "Value", "Occurrence", "Probability"]]
     # Write onto a file.
-    with open("../data/domain_drop_analysis.txt", "w") as f:
+    with open("../data/talent_weapon_drop_analysis.txt", "w") as f:
         # For each data set.
         for i, (data_i, sub_header) in enumerate(zip(datas, sxn_headers)):
             # Get the data to print.
@@ -187,12 +187,12 @@ def print_analysis(datas):
 
 def main():
     # Hardcode the path from source root.
-    path = "../data/domain_drop_data.xlsx"
+    path = "../data/talent_weapon_drop_data.xlsx"
     # Check if the file exists
     if not file_exists(path):
         # Exits the program if the file does not exist.
         print("Place your excel file in the data directory.\n"
-              "Make sure it is called \"domain_drop_data.xlsx\"")
+              "Make sure it is called \"talent_weapon_drop_data.xlsx\"")
         sys.exit(0)
         pass
     # Get the Excel Spreadsheet.
