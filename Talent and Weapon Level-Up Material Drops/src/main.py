@@ -187,12 +187,12 @@ def print_analysis(datas):
 
 def main():
     # Hardcode the path from source root.
-    path = "../data/talent_weapon_drop_data.xlsx"
+    path = "../data/talent_weapon_drops.xlsx"
     # Check if the file exists
     if not file_exists(path):
         # Exits the program if the file does not exist.
         print("Place your excel file in the data directory.\n"
-              "Make sure it is called \"talent_weapon_drop_data.xlsx\"")
+              "Make sure it is called \"talent_weapon_drops.xlsx\"")
         sys.exit(0)
         pass
     # Get the Excel Spreadsheet.
