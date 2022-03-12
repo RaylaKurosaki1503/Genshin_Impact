@@ -43,24 +43,24 @@ def save_workbook(workbook, filename):
     pass
 
 
-def create_new_worksheet(workbook, name, pos=None):
+def create_new_worksheet(workbook, worksheet_name, pos=None):
     """
     Creates a new worksheet and either adds it at a specific position, or
     adds it to the end of the workbook if no position is given.
 
     :param workbook: Current workbook to manipulate.
-    :param name: Name of the new worksheet.
+    :param worksheet_name: Name of the new worksheet.
     :param pos: Inserting the worksheet at position pos.
     """
     # if the user doesn't specify a position to insert the sheet at.
     if pos is None:
         # Insert the sheet at the end of the workbook.
-        workbook.create_sheet(name)
+        workbook.create_sheet(worksheet_name)
         pass
     # Otherwise.
     else:
         # Insert the sheet at the user's desired position.
-        workbook.create_sheet(name, pos)
+        workbook.create_sheet(worksheet_name, pos)
         pass
     pass
 
@@ -81,7 +81,10 @@ def get_worksheet(workbook, worksheet_name=None):
     # Otherwise.
     else:
         # Get the worksheet with the correct worksheet name.
-        return workbook[worksheet_name]
+        if worksheet_name in get_worksheet_names(workbook):
+            return workbook[worksheet_name]
+        else:
+            return None
     pass
 
 
@@ -94,6 +97,18 @@ def copy_worksheet(workbook, worksheet):
     :return: A copy of the worksheet.
     """
     return workbook.copy_worksheet(worksheet)
+
+
+def delete_worksheet(workbook, worksheet_name):
+    """
+    Deletes a worksheet if it's in the workbook.
+
+    :param workbook: Current workbook to manipulate.
+    :param worksheet_name: Name of the worksheet to get.
+    """
+    if worksheet_name in get_worksheet_names(workbook):
+        workbook.remove_sheet(get_worksheet(workbook, worksheet_name))
+    pass
 
 
 def get_worksheet_names(workbook):
@@ -126,7 +141,7 @@ def get_cell(worksheet, cell):
     :param cell: A string or a tuple which denotes the cell to access.
     :return: A specific cell of the current worksheet.
     """
-    if len(cell) == 2:
+    if type(cell) is tuple:
         r, c = cell
         return worksheet.cell(row=r, column=c)
     else:
@@ -142,7 +157,7 @@ def get_cell_value(worksheet, cell):
     :param cell: A string or a tuple which denotes the cell to access.
     :return: The value of a specific cell of the current worksheet.
     """
-    if len(cell) == 2:
+    if type(cell) is tuple:
         r, c = cell
         return worksheet.cell(row=r, column=c).value
     else:
@@ -158,7 +173,7 @@ def update_cell_value(worksheet, cell, value):
     :param cell: A string or a tuple which denotes the cell to access.
     :param value: The new value of the cell.
     """
-    if len(cell) == 2:
+    if type(cell) is tuple:
         r, c = cell
         worksheet.cell(row=r, column=c, value=value)
         pass
@@ -169,6 +184,14 @@ def update_cell_value(worksheet, cell, value):
 
 
 def apply_color_scale(worksheet, cell1, cell2, color_rule):
+    """
+    Applies a color rule to a series of cells.
+
+    :param worksheet: Current worksheet to manipulate.
+    :param cell1: Starting range of the cells to manipulate.
+    :param cell2: Ending range of the cells to manipulate.
+    :param color_rule: The color rule to apply.
+    """
     worksheet.conditional_formatting.add(f"{cell1}:{cell2}", color_rule)
     pass
 
@@ -293,6 +316,26 @@ def get_max_cols(worksheet):
     :return: Number of non-empty columns
     """
     return worksheet.max_column
+
+
+# def autofit_column_width(worksheet, data, col_letters):
+#     column_widths = []
+#     for row in data:
+#         for i, cell in enumerate(row):
+#             if len(column_widths) > i:
+#                 if len(cell) > column_widths[i]:
+#                     column_widths[i] = len(cell)
+#                     pass
+#                 pass
+#             else:
+#                 column_widths += [len(cell)]
+#                 pass
+#             pass
+#         pass
+#     for column_width, col_letter in zip(column_widths, col_letters):
+#         worksheet.column_dimensions[col_letter].width = column_width
+#         pass
+#     pass
 
 # def template_iter(ws):
 #     """
