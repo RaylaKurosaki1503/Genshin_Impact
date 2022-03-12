@@ -33,3 +33,24 @@ def format_num_2(num):
     :return: The number formatted to 2 decimal places.
     """
     return float("{:.2f}".format(num))
+
+
+def compute_drop_value(drop):
+    """
+    Computes the value of the drop. Each green material is worth 1. Each blue
+    material is worth 3 green materials. Each purple material is worth 3 blue
+    materials. Each gold material is worth 3 purple materials. The value of
+    each drop is computed by computing its value in green materials.
+
+    :param drop: The drop to compute the value of.
+    :return: The value of the drop.
+    """
+    # Case where the drop is a talent material drop.
+    if len(drop) == 3:
+        p, b, g = drop
+        # Set the gold drop to 0 since you cannot get gold talent materials.
+        y = 0
+    # Case where the drop is a weapon material drop.
+    else:
+        y, p, b, g = drop
+    return int(g) + 3 * int(b) + 9 * int(p) + 27 * int(y)
