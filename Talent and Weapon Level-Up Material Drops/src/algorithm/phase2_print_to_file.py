@@ -7,9 +7,9 @@ Description: This file contains functions to analyze and print the data to a
              text file.
 """
 
-import numpy as np
-
 import copy
+
+import numpy as np
 
 import __utils__ as utils
 import __utils__.miscellaneous_functions as misc
