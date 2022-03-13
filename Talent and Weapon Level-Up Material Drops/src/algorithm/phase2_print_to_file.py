@@ -3,7 +3,8 @@ Author: Rayla Kurosaki
 
 File: phase2_print_to_file.py
 
-Description: This file
+Description: This file contains functions to analyze and print the data to a
+             text file.
 """
 
 import copy
@@ -88,5 +89,12 @@ def print_analysis(datas):
 
 
 def phase2_main(talent, weapon):
+    """
+    This file calls functions to analyze the Talent and Weapon material data
+    sets and prints it out to a text file.
+
+    :param talent: The Talent data set to analyze.
+    :param weapon: The Weapon data set to analyze.
+    """
     print_analysis([talent, weapon])
     pass
