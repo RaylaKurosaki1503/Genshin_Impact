@@ -6,6 +6,8 @@ File: miscellaneous_functions.py
 Description: This file contains all uncategorizable functions.
 """
 
+from openpyxl import styles
+
 
 def get_reverse_sorted_dict(dict):
     """
@@ -54,3 +56,36 @@ def compute_drop_value(drop):
     else:
         y, p, b, g = drop
     return int(g) + 3 * int(b) + 9 * int(p) + 27 * int(y)
+
+
+def get_fills(data_type):
+    """
+    Initializes and returns list of color fills based on the type of data
+    requested.
+
+    :param data_type: Talent or Weapon material data.
+    :return: A list of color fills based on the type of data requested.
+    """
+    # Initialize some color fills.
+    gold_fill = styles.PatternFill(
+        start_color="FFFF00", end_color="FFFF00", fill_type="solid"
+    )
+    purple_fill = styles.PatternFill(
+        start_color="7030A0", end_color="7030A0", fill_type="solid"
+    )
+    blue_fill = styles.PatternFill(
+        start_color="00B0F0", end_color="00B0F0", fill_type="solid"
+    )
+    green_fill = styles.PatternFill(
+        start_color="66FF66", end_color="66FF66", fill_type="solid"
+    )
+    value_fill = styles.PatternFill(
+        start_color="FFFFFF", end_color="FFFFFF", fill_type="solid"
+    )
+    # Return a list of color fills based on the type of data requested.
+    if data_type == "Talent":
+        return [purple_fill, blue_fill, green_fill, value_fill, value_fill]
+    else:
+        return [gold_fill, purple_fill, blue_fill, green_fill, value_fill,
+                value_fill]
+    pass
