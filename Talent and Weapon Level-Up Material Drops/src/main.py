@@ -31,9 +31,7 @@ def main():
     # Print the analysis to a text file.
     alg.phase2_main(talent, weapon)
     # Update the analyzed data in the workbook.
-    alg.phase3_main(workbook, talent, weapon)
-    # Save the Workbook.
-    utils.save_workbook(workbook, path)
+    alg.phase3_main(talent, weapon)
     pass
 
 
