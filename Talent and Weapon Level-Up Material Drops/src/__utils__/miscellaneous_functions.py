@@ -17,12 +17,8 @@ def get_reverse_sorted_dict(dict):
     :param dict: Dictionary to sort.
     :return: The sorted dictionary in reverse order.
     """
-    # Initialize a temporary dictionary to store the reversed sorted pairs of
-    # the original dictionary.
     reverse_sorted_dict = {}
-    # For each key in the reversed sorted original dictionary.
     for key in sorted(dict, reverse=True):
-        # Add it to the temporary dictionary.
         reverse_sorted_dict[key] = dict[key]
     return reverse_sorted_dict
 
@@ -47,12 +43,9 @@ def compute_drop_value(drop):
     :param drop: The drop to compute the value of.
     :return: The value of the drop.
     """
-    # Case where the drop is a talent material drop.
     if len(drop) == 3:
         p, b, g = drop
-        # Set the gold drop to 0 since you cannot get gold talent materials.
         y = 0
-    # Case where the drop is a weapon material drop.
     else:
         y, p, b, g = drop
     return int(g) + 3 * int(b) + 9 * int(p) + 27 * int(y)
@@ -66,7 +59,6 @@ def get_fills(data_type):
     :param data_type: Talent or Weapon material data.
     :return: A list of color fills based on the type of data requested.
     """
-    # Initialize some color fills.
     gold_fill = styles.PatternFill(
         start_color="FFFF00", end_color="FFFF00", fill_type="solid"
     )
@@ -82,7 +74,6 @@ def get_fills(data_type):
     value_fill = styles.PatternFill(
         start_color="FFFFFF", end_color="FFFFFF", fill_type="solid"
     )
-    # Return a list of color fills based on the type of data requested.
     if data_type == "Talent":
         return [purple_fill, blue_fill, green_fill, value_fill, value_fill]
     else:
