@@ -9,7 +9,7 @@ Description: This file contains functions to analyze and print the data to a
 
 from openpyxl import styles
 from openpyxl.formatting.rule import ColorScaleRule
-from openpyxl.styles import Font, Alignment
+from openpyxl.styles import Alignment, Font
 from openpyxl.utils import get_column_letter
 
 import __utils__ as utils
