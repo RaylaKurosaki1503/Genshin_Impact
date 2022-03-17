@@ -183,6 +183,6 @@ def phase3_main(talent, weapon):
     workbook = init_new_workbook(talent, weapon)
     add_talent_data(workbook, talent)
     add_weapon_data(workbook, weapon)
-    path = "../data/output-talent_weapon_drops.xlsx"
+    path = "../data/output.xlsx"
     utils.save_workbook(workbook, path)
     pass
