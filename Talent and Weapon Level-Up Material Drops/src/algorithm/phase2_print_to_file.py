@@ -44,7 +44,7 @@ def print_analysis(datas):
     sxn_headers = ["Talent Domain Drop Analysis",
                    "Weapon Domain Drop Analysis"]
     table_header = [["Drop", "Value", "Occurrence", "Probability"]]
-    with open("../data/talent_weapon_drop_analysis.txt", "w") as f:
+    with open("../data/output.txt", "w") as f:
         for i, (data_i, sub_header) in enumerate(zip(datas, sxn_headers)):
             data = get_data_to_print(table_header, data_i)
             max_len = utils.get_max_len(data)
