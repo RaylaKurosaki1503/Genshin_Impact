@@ -24,11 +24,10 @@ def init_new_workbook(talent, weapon):
     :param weapon: The Weapon Material data to analyze.
     :return: A new, styled workbook.
     """
-    worksheet_name = "Analysis"
     workbook = utils.create_workbook()
+    worksheet_name = "Analysis"
     utils.create_new_worksheet(workbook, worksheet_name)
     worksheet = utils.get_worksheet(workbook, worksheet_name)
-    utils.delete_worksheet(workbook, "Sheet")
 
     col_widths = [2.77734375, 6.44140625, 4.6640625, 6.0, 5.5546875,
                   9.88671875, 2.77734375, 4.88671875, 6.44140625, 4.6640625,
@@ -108,6 +107,7 @@ def init_new_workbook(talent, weapon):
         pass
     start_cell, end_cell = "M5", f"M{4 + len(weapon)}"
     utils.apply_color_scale(worksheet, start_cell, end_cell, color_rule)
+    utils.delete_worksheet(workbook, "Sheet")
     return workbook
 
 
