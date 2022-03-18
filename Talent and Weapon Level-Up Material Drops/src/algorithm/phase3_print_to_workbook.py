@@ -16,10 +16,29 @@ import __utils__ as utils
 import __utils__.miscellaneous_functions as misc
 
 
-def init_new_workbook(talent, weapon):
+def get_col_width(path):
+    """
+    Compute the column widths of the soon-to-be-deleted output file.
+
+    :param path: Path to the soon-to-be-deleted output file.
+    :return: The column widths of the soon-to-be-deleted output file.
+    """
+    n = 14
+    col_widths = []
+    workbook = utils.get_workbook(path)
+    worksheet = utils.get_worksheet(workbook, "Analysis")
+    for i in range(1, n + 1):
+        col_letter = get_column_letter(i)
+        col_widths.append(worksheet.column_dimensions[col_letter].width)
+        pass
+    return col_widths
+
+
+def init_new_workbook(col_widths, talent, weapon):
     """
     Creates a new, styled workbook.
 
+    :param col_widths: The width size of each column.
     :param talent: The Talent Material data to analyze.
     :param weapon: The Weapon Material data to analyze.
     :return: A new, styled workbook.
@@ -29,9 +48,6 @@ def init_new_workbook(talent, weapon):
     utils.create_new_worksheet(workbook, worksheet_name)
     worksheet = utils.get_worksheet(workbook, worksheet_name)
 
-    col_widths = [2.77734375, 6.44140625, 4.6640625, 6.0, 5.5546875,
-                  9.88671875, 2.77734375, 4.88671875, 6.44140625, 4.6640625,
-                  6.0, 5.5546875, 9.88671875, 2.77734375]
     for i, width in enumerate(col_widths):
         col_letter = get_column_letter(i + 1)
         worksheet.column_dimensions[col_letter].width = width
@@ -180,9 +196,10 @@ def phase3_main(talent, weapon):
     :param talent: The Talent Material data to print.
     :param weapon: The Weapon Material data to print.
     """
-    workbook = init_new_workbook(talent, weapon)
+    path = "../data/output.xlsx"
+    col_widths = get_col_width(path)
+    workbook = init_new_workbook(col_widths, talent, weapon)
     add_talent_data(workbook, talent)
     add_weapon_data(workbook, weapon)
-    path = "../data/output.xlsx"
     utils.save_workbook(workbook, path)
     pass
