@@ -11,6 +11,7 @@ from openpyxl import styles
 from openpyxl.formatting.rule import ColorScaleRule
 from openpyxl.styles import Alignment, Font
 from openpyxl.utils import get_column_letter
+from os.path import exists as file_exists
 
 import __utils__ as utils
 import __utils__.miscellaneous_functions as misc
@@ -23,15 +24,19 @@ def get_col_width(path):
     :param path: Path to the soon-to-be-deleted output file.
     :return: The column widths of the soon-to-be-deleted output file.
     """
-    n = 14
-    col_widths = []
-    workbook = utils.get_workbook(path)
-    worksheet = utils.get_worksheet(workbook, "Analysis")
-    for i in range(1, n + 1):
-        col_letter = get_column_letter(i)
-        col_widths.append(worksheet.column_dimensions[col_letter].width)
-        pass
-    return col_widths
+    if not file_exists(path):
+        return None
+    else:
+        n = 14
+        col_widths = []
+        workbook = utils.get_workbook(path)
+        worksheet = utils.get_worksheet(workbook, "Analysis")
+        for i in range(1, n + 1):
+            col_letter = get_column_letter(i)
+            col_widths.append(worksheet.column_dimensions[col_letter].width)
+            pass
+        return col_widths
+    pass
 
 
 def init_new_workbook(col_widths, talent, weapon):
@@ -47,10 +52,11 @@ def init_new_workbook(col_widths, talent, weapon):
     worksheet_name = "Analysis"
     utils.create_new_worksheet(workbook, worksheet_name)
     worksheet = utils.get_worksheet(workbook, worksheet_name)
-
-    for i, width in enumerate(col_widths):
-        col_letter = get_column_letter(i + 1)
-        worksheet.column_dimensions[col_letter].width = width
+    if col_widths is not None:
+        for i, width in enumerate(col_widths):
+            col_letter = get_column_letter(i + 1)
+            worksheet.column_dimensions[col_letter].width = width
+            pass
         pass
     black_fill = styles.PatternFill(
         start_color="000000", end_color="000000", fill_type="solid"
