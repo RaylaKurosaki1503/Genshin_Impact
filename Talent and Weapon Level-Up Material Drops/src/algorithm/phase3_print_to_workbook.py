@@ -202,7 +202,7 @@ def phase3_main(talent, weapon):
     :param talent: The Talent Material data to print.
     :param weapon: The Weapon Material data to print.
     """
-    path = "../data/output.xlsx"
+    path = "../output/drop_rate_analysis.xlsx"
     col_widths = get_col_width(path)
     workbook = init_new_workbook(col_widths, talent, weapon)
     add_talent_data(workbook, talent)
