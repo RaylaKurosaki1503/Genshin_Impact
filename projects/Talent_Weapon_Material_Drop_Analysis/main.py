@@ -12,7 +12,6 @@ from os.path import exists as file_exists
 
 import __utils__ as utils
 from projects.Talent_Weapon_Material_Drop_Analysis import algorithm as alg
-# import algorithm as alg
 
 
 def main():
